@@ -1,35 +1,45 @@
 #include <iostream>
 #include <stdlib.h>
+#include "Course.h"
+#include "Roster.h"
+
 using namespace std;
 
-class Course {
-   public:
-      Course(string name, unsigned int capacity, string instruct) {
-         courseName = name;
-	 maximumCapacity = capacity;
-	 instructor = instruct;
-      }
+Roster roster;
 
-      Course() {
-         courseName = "";
-         maximumCapacity = 0;
-         instructor = "";
-      }
+Course::Course() {
 
-      void show() {
-         cout << courseName << " (" << maximumCapacity << "): " << instructor << endl;
-      }
-
-   private:
-      string courseName = "";
-      unsigned int maximumCapacity = 0;
-      string instructor = "";
-};
-
-int main(int argc, char *argv[]) {
-   Course one;
-   Course *two = new Course("CS 240", 100, "Dracula");
-   one.show();
-   two->show();
-   delete(two);
+  courseName = "";
+  maximumCapacity = 0;
+  instructor = "";
+  
 }
+
+Course::Course(string n, unsigned int cap, string instruct) {
+
+	courseName = n;
+        maximumCapacity = cap;
+        instructor = instruct;
+}
+
+void Course::show() {
+
+  cout << courseName << " (" << maximumCapacity << "): " << instructor <\
+< endl;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
